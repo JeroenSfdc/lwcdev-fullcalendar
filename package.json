@@ -1,0 +1,51 @@
+{
+    "name": "lwcdev-fullcalender",
+    "version": "0.0.1",
+    "author": "JeroenSfdc",
+    "bugs": "https://github.com/JeroenSfdc/lwcdev-fullcalender/issues",
+    "dependencies": {
+        "@fullcalendar/core": "^5.7.2",
+        "@fullcalendar/daygrid": "^5.7.2",
+        "@fullcalendar/interaction": "^5.7.2",
+        "@fullcalendar/list": "^5.7.2",
+        "@fullcalendar/timegrid": "^5.7.2",
+        "compression": "^1.7.4",
+        "express": "^4.17.1",
+        "helmet": "^4.6.0"
+    },
+    "devDependencies": {
+        "css-loader": "^5.2.6",
+        "eslint": "^7.28.0",
+        "eslint-plugin-inclusive-language": "^2.1.1",
+        "husky": "^6.0.0",
+        "lwc-services": "^3.1.1",
+        "mini-css-extract-plugin": "^1.6.0",
+        "prettier": "^2.3.1"
+    },
+    "engines": {
+        "node": ">=10.13.0",
+        "npm": ">=6.4.1",
+        "yarn": ">=1.9.4"
+    },
+    "homepage": "https://github.com/JeroenSfdc/lwcdev-fullcalender",
+    "keywords": [
+        "lwc"
+    ],
+    "license": "MIT",
+    "repository": "JeroenSfdc/lwcdev-fullcalender",
+    "scripts": {
+        "build": "lwc-services build -m production",
+        "build:development": "lwc-services build",
+        "lint": "eslint ./src/**/*.js",
+        "postinstall": "husky install",
+        "precommit": "npm run prettier:verify && [ $? -eq 0 ] && npm run lint",
+        "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+        "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+        "start": "node scripts/server.js",
+        "test:unit": "lwc-services test:unit",
+        "test:unit:coverage": "lwc-services test:unit --coverage",
+        "test:unit:debug": "lwc-services test:unit --debug",
+        "test:unit:watch": "lwc-services test:unit --watch",
+        "watch": "lwc-services watch"
+    }
+}
